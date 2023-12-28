@@ -566,28 +566,32 @@ const comment = (() => {
         buttonKirim.innerHTML = loader;
 
         let isSuccess = false;
-        await request('POST', '/api/comment')
-            .token(token)
-            .body({
-                nama: nama,
-                hadir: hadir == 1,
-                komentar: komentar
-            })
-            .then((res) => {
-                if (res.code == 201) {
-                    owns.set(res.data.uuid, res.data.own);
-                    isSuccess = true;
-                }
-            })
-            .catch((err) => {
-                alert(`Terdapat kesalahan: ${err}`);
-            });
 
-        if (isSuccess) {
-            await pagination.reset();
-            document.getElementById('daftar-ucapan').scrollIntoView({ behavior: 'smooth' });
-            resetForm();
-        }
+        window.location = 'https://wa.me/6285899355635?text='+nama+' Mengkonfirmasi '+formKehadiran.value+' '+komentar
+
+        isSuccess = true;
+        // await request('POST', '/api/comment')
+        //     .token(token)
+        //     .body({
+        //         nama: nama,
+        //         hadir: hadir == 1,
+        //         komentar: komentar
+        //     })
+        //     .then((res) => {
+        //         if (res.code == 201) {
+        //             owns.set(res.data.uuid, res.data.own);
+        //             isSuccess = true;
+        //         }
+        //     })
+        //     .catch((err) => {
+        //         alert(`Terdapat kesalahan: ${err}`);
+        //     });
+
+        // if (isSuccess) {
+        //     await pagination.reset();
+        //     document.getElementById('daftar-ucapan').scrollIntoView({ behavior: 'smooth' });
+        //     resetForm();
+        // }
 
         buttonKirim.disabled = false;
         buttonKirim.innerHTML = tmp;
