@@ -567,7 +567,7 @@ const comment = (() => {
 
         let isSuccess = false;
 
-        window.location = 'https://wa.me/6285899355635?text='+nama+' Mengkonfirmasi '+formKehadiran.value+' '+komentar
+        window.location = 'https://wa.me/6285779938887?text='+nama+' Mengkonfirmasi '+formKehadiran.value+' '+komentar
 
         isSuccess = true;
         // await request('POST', '/api/comment')
